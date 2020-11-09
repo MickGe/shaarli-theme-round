@@ -1,0 +1,195 @@
+:root {
+	--color-rpi1: #1e7069;
+	--color-rpi2: #32a4a7;
+	--color-rpi3: #44d1df;
+	--color-rpi33: #44d1df55;
+	--color-rpi4: #f44560;
+	--color-rpi5: #730517;
+	--color-rpi6: #172927;
+	--color-rpi7: #ccc;
+	--color-rpi8: #e4e4e4;
+}
+
+html{color:#000;background:var(--color-rpi6);}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+/* ******** My customization ********* */
+
+#shaarli-menu {
+	background-color:var(--color-rpi6);
+}
+
+#footer {
+	display: none;
+}
+
+.searchform-block input[type='text'] {
+	border-radius: 10px;
+	height: 20px;
+}
+
+button[type='submit'] {
+	background-color: transparent;
+	color: var(--color-rpi5)
+}
+
+button[type='submit']:hover {
+	color: var(--color-rpi4)
+}
+
+.pure-menu-item:hover::after {
+	background-color: var(--color-rpi2);
+}
+
+.container {
+	padding-bottom: 15px;
+	background-color: var(--color-rpi1);
+	min-height: calc( 100vh - 45px - 15px );
+}
+
+.linklist-item-title .linklist-link {
+	color: black !important;
+	font-size: 1.5em;
+	padding: 0.2rem 0.4rem;
+	position: relative;
+	background-color: var(--color-rpi33);
+	border-radius: 10px;
+}
+
+.linklist-item-title .linklist-link:visited {
+	color: black;
+}
+
+.linklist-item.private::before {
+	background: var(--color-rpi5);
+	width: 4px;
+	opacity: 0.8;
+	height: calc( 100% - 1rem );
+top: 0.5rem;
+border-radius: 1rem;
+left: -2px;
+}
+
+.linklist-item-title .label-private {
+	border-color: var(--color-rpi5);
+	color: var(--color-rpi5)
+}
+
+.linkcount {
+	color: var(--color-rpi7)
+}
+
+.linklist-item-infos .label-tag {
+	background-color: var(--color-rpi4);
+	border-radius: 5px;
+	border: 2px solid var(--color-rpi5);
+}
+
+span.label.label-tag {
+	font-size: 0.8em;
+}
+
+span.label.label-tag a {
+	font-weight: 200;
+	color: #fff;
+}
+
+.linklist-item-infos-dateblock.pure-u-lg-7-12.pure-u-1 span.linkdate {
+	font-size: 0.8em;
+	color: var(--color-rpi6);
+	font-style: italic;
+}
+
+.linklist-filters .linklist-filters-text,
+.linksperpage div {
+	color: var(--color-rpi7);
+	font-size: 0.8em;
+	font-style: italic;
+	padding-right: 0.4em;
+}
+
+.linklist-item-infos {
+	background-color: var(--color-rpi7);
+}
+
+.linklist-item, .linklist-item-title {
+	background-color: var(--color-rpi8);
+}
+
+.linklist-item {
+	flex: 0 0 20rem;
+align-self: center;
+margin: 0.4rem;
+border-radius: 1rem;
+max-width: 100%;
+}
+
+.linklist-item-title {
+	border-radius: 1rem 1rem 0 0;
+}
+
+.linklist-item-infos {
+	border-radius: 0 0 1rem 1rem;
+}
+
+.linklist-item-description a:visited {
+	color: var(--color-rpi6);
+}
+
+#permalinkQrcode.show {
+	transform: translate(50%,-50%);
+}
+
+.mobile-buttons #permalinkQrcode.show {
+	transform: translate(-30%,-50%);
+}
+
+#linklist-loop-content {
+	display: flex;
+flex-flow: row wrap;
+align-items: flex-start;
+justify-content: center;
+align-content: stretch;
+width: calc( 100% - 4rem );
+margin-right: 2rem;
+margin-left: 2rem;
+position: relative;
+}
+
+img.linklist-plugin-icon {
+	transform: translate(15rem,0);
+}
+.mobile-buttons img.linklist-plugin-icon {
+	transform: inherit;
+}
+
+div.linklist-item-infos-date-url-block {
+	display: flex;
+flex-flow: row wrap;
+align-items: flex-start;
+align-content: center;
+}
+
+div.linklist-item-infos-dateblock {
+display: flex;
+flex-flow: column wrap;
+}
+
+.linklist-item-thumbnail {
+	border-radius: 0 1rem 0 0;
+overflow: hidden;
+}
+
+.linklist-filters {
+	display: flex;
+flex-flow: row wrap;
+justify-content: flex-start;
+}
+
+.linklist-filters .filter-off, .linksperpage a {
+	border-radius: 0.5rem;
+	margin: 0.08rem;
+}
+
+.pure-alert-success {
+	background-color: var(--color-rpi2);
+}
