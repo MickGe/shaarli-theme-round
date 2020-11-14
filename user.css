@@ -15,59 +15,73 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   --color-theme7: #1e2c38;
   --color-theme8: #294a68;
   --color-theme9: #a03131;
+  --color-theme10: #009e00;
   --length-border2: 0.2rem;
   --length-border5: 0.5rem;
+  --delay-transition2: 200ms;
+  --delay-transition5: 500ms;
+  --scale-rate1: 1.1;
+  --scale-rate2: 1.2;
+}
+
+::selection {
+  background-color: var(--color-theme10);
+  color: var(--color-theme7);
 }
 
 /* SECTION: Global */
 
 html {
-  color: var(--color-theme00);
+  color: var(--color-theme00 );
 }
 
 body {
-	/* background-image: url(https://www.setaswall.com/wp-content/uploads/2017/07/Coffee-Background-22-1920x1200.jpg); */
-	background-color: var(--color-theme2);
-	/* background-position: center top; */
+  background: linear-gradient(to bottom, var(--color-theme2 ), var(--color-theme7 ) ) fixed;
+  /* padding-bottom: 5rem; */
 }
 
 a,
 a:visited {
-	color: inherit !important;
+	color: inherit;
 }
 
 /* SECTION: Colors */
 
+/* .daily-entry-description a, */
+.linklist-filters .filter-on,
+/* .page-form a, */
+.page-form a.button,
+.page-form input[type="submit"],
+.progressbar,
 .pure-alert-success,
+.pure-button-shaarli,
 .searchform-block button,
 .subheader-form,
 .subheader-form[type="submit"],
-.linklist-filters .filter-on,
-.page-form a.button,
-.page-form input[type="submit"],
-.tools-item .pure-button:hover,
-.progressbar,
-.pure-button-shaarli,
-.page-form a,
-.daily-entry-description a {
-	background-color: var(--color-theme6);
-	color: (var(--color-theme5));
+.tools-item .pure-button:hover {
+	background-color: var(--color-theme8);
+  color: var(--color-theme5);
+  transition: all var(--delay-transition5);
+}
+
+.linklist-filters .filter-on .fa::before {
+  color: var(--color-theme5);
 }
 
 .subheader-form[type="submit"]:hover,
-.searchform-block button:hover,
+.page-form input[type="submit"]:hover,
 .page-form .window-title,
-.taglist-container .validate-rename-tag
-{
+.taglist-container .validate-rename-tag {
   background-color: var(--color-theme5);
-	color: var(--color-theme6);
+  color: var(--color-theme6);
+  box-shadow: 0.0rem 0.0rem 0.5rem var(--color-theme8) inset;
 }
 
 .linklist-item-title .linklist-link,
 .linklist-item-title .linklist-link:visited,
 .linklist-item-description a,
 .linklist-item-description a:visited {
-  color: var(--color-theme7) !important;
+  color: var(--color-theme7 ) !important;
 }
 
 .linklist-filters {
@@ -95,7 +109,7 @@ a:visited {
 button,
 input[type="text"],
 input[type="submit"] {
-  border-radius: var(--length-border5) !important;
+  border-radius: var(--length-border5 ) !important;
 }
 
 .linklist-item-title {
@@ -109,10 +123,23 @@ input[type="submit"] {
 }
 
 .thumbnail img {
-  border-top-right-radius: calc( var(--length-border5) - 1px );
+  border-top-right-radius: calc( var(--length-border5 ) - 1px );
+}
+
+#addlink-form,
+.page-form.page-form-light,
+.page-form.page-visitor {
+  border-radius: var(--length-border5);
 }
 
 /* SECTION: #shaarli-menu */
+
+img.head-logo {
+  /* thanks to https://stackoverflow.com/a/50942954/12632623 */
+  /* and https://codepen.io/sosuke/pen/Pjoqqp */
+  /* and this one to understand https://www.domysee.com/blogposts/coloring-white-images-css-filter */
+  filter: invert(80%) sepia(96%) saturate(3257%) hue-rotate(98deg) brightness(97%) contrast(101%);
+}
 
 #shaarli-menu {
 	/* background-image: url(https://grassmonkeyorganics.com/wp-content/uploads/2018/10/917.jpg); */
@@ -122,22 +149,23 @@ input[type="submit"] {
 }
 
 .pure-menu-item {
-  scale: 1;
-  transition: all 500ms;
+  transform: scale(1);
+  transition: all var(--delay-transition5);
 }
 
 .pure-menu-item:hover {
   color: var(--color-theme4);
-  scale: 1.2;
+  transform: scale( var(--scale-rate2 ) );
 }
 
 .pure-menu-item a {
-  transition: all 500ms;
+  transition: all var(--delay-transition5);
 }
 
 .pure-menu-item a:hover {
   padding-bottom: calc( 0.8em - 8px );
-  border-bottom: var(--length-border2) solid var(--color-theme6);
+  color: var(--color-theme5);
+  border-bottom: var(--length-border2 ) solid var(--color-theme6);
 }
 
 .pure-menu-item:hover::after {
@@ -145,7 +173,7 @@ input[type="submit"] {
 }
 
 .menu-toggle .bar {
-  background-color: var(--color-theme00);
+  background-color: var(--color-theme00 );
 }
 
 @media screen and (max-width: 64em) {
@@ -166,14 +194,38 @@ input[type="submit"] {
   font-weight: bolder;
 }
 
+/* SECTION: #actions */
+
+#actions.subheader-form.open div:first-child {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+}
+
+#actions-delete {
+  background-color: var(--color-theme9);
+  transform: scale(1);
+  transition: all var(--delay-transition5);
+}
+
+#actions-delete:hover {
+  transform: scale( var(--scale-rate2 ) );
+}
+
 /* SECTION: #search-linklist */
 
 #search-linklist .search-button {
-  transition: all 200ms;
+  transition: all var(--delay-transition5);
 }
 
 #search-linklist .search-button:hover {
-  scale: 1.1;
+  transform: scale( var(--scale-rate1 ) );
+}
+
+.searchform-block button:hover {
+  color: var(--color-theme2);
+  background-color: var(--color-theme6);
 }
 
 
@@ -185,15 +237,45 @@ input[type="submit"] {
   align-items: center;
 }
 
+.linklist-pages a {
+  color: var(--color-theme5);
+  transition: all var(--delay-transition5);
+}
+
+.linklist-pages a:hover {
+  color: var(--color-theme6);
+}
+
 .linklist-filters > *,
 .linksperpage > * {
-  transition: scale 200ms;
+  transition: all var(--delay-transition2);
   margin: 2px;
 }
 
-.linklist-filters > *:hover,
+.linklist-filters > a:hover {
+  transform: scale( var(--scale-rate1 ));
+}
+
 .linksperpage > a:hover {
-  scale: 1.1;
+  transform: scale( var(--scale-rate2 ));
+}
+
+.linklist-filters .filter-off {
+  box-shadow: 0.1rem 0.1rem 0.1rem var(--color-theme0), 0.1rem 0.1rem 0.1rem var(--color-theme4) inset;
+}
+
+.linklist-filters .filter-on {
+  box-shadow: 0.1rem 0.1rem 0.1rem var(--color-theme0) inset, 0.1rem 0.1rem 0.1rem var(--color-theme5);
+}
+
+/* SECTION: #linklist */
+
+/* SECTION: #link-count-block */
+
+/* SECTION: #search-result-block */
+
+.pure-alert {
+  border-radius: 1rem;
 }
 
 /* SECTION: #linklist-loop-block */
@@ -241,29 +323,146 @@ input[type="submit"] {
   font-size: 0.7rem;
 }
 
+.linklist-item-title .linklist-link {
+  font-size: 1.4rem;
+}
+
 /* SECTION: .linklist-item.linklist-item-title.linklist-item-editbuttons.label-private  */
 
+.linklist-item-title .linklist-item-editbuttons {
+  z-index: 1000;
+  position: absolute;
+  right: 0;
+}
+
 .linklist-item-title .label-private {
-  transform: rotate(15deg);
+  text-shadow: 0.06rem 0.06rem 0.06rem var(--color-theme00), -0.06rem -0.06rem 0.12rem var(--color-theme0);
+  box-shadow: 0.06rem 0.06rem 0.06rem var(--color-theme00), 0.06rem 0.06rem 0.06rem var(--color-theme00) inset, -0.06rem -0.06rem 0.12rem var(--color-theme0), -0.06rem -0.06rem 0.12rem var(--color-theme0) inset;
+  transform: rotate(15deg) scale(1.8);
   color: var(--color-theme9);
   border-color: var(--color-theme9);
 }
 
-.fa.fa-external-link::before {
+.fa.fa-external-link {
   color: var(--color-theme8);
   opacity: 0.5;
+  transition: all var(--delay-transition2);
+}
+
+.fa.fa-external-link:hover {
+  opacity: 1;
 }
 
 .linklist-item.private::before {
-  background-image: linear-gradient(to right, var(--color-theme9) 50%, transparent);
+  background-image: linear-gradient(to right, var(--color-theme9 ) 50%, transparent);
   background-color: initial;
   width: var(--length-border5);
-  border-top-left-radius: calc( var(--length-border5) - 1px );
-  border-bottom-left-radius: calc( var(--length-border5) - 1px );
+  border-top-left-radius: calc( var(--length-border5 ) - 1px );
+  border-bottom-left-radius: calc( var(--length-border5 ) - 1px );
+  z-index: 1;
+}
+
+/* SECTION: .linklist-item.linklist-item-infos.linklist-item-tags.label-tag  */
+
+.linklist-item .linklist-item-infos .linklist-item-tags .label-tag {
+  color: var(--color-theme9);
+  background: padding-box radial-gradient( var(--color-theme5) 40%, var(--color-theme4));
+  text-shadow: 0.05rem 0.05rem 0.06rem var(--color-theme00), -0.03rem -0.03rem 0.04rem var(--color-theme0);
+  border: 0.06rem solid var(--color-theme3);
+  box-shadow: 0.06rem 0.06rem 0.06rem var(--color-theme1), 0.06rem 0.06rem 0.12rem var(--color-theme1) inset, -0.06rem -0.06rem 0.12rem var(--color-theme00) inset, -0.06rem -0.06rem 0.12rem var(--color-theme00);
+  position: relative;
+  padding-left: 0.5rem;
+  transform: scale(1);
+  transition: all var(--delay-transition2);
+}
+
+
+.linklist-item .linklist-item-infos .linklist-item-tags .label-tag:hover {
+  transform: scale( var(--scale-rate1) );
+}
+
+.linklist-item .linklist-item-infos .linklist-item-tags .label-tag a {
+  color: var(--color-theme9);
+}
+
+.linklist-item .linklist-item-infos .linklist-item-tags > i {
+  display: none;
+}
+
+.linklist-item .linklist-item-infos .linklist-item-tags .label-tag::after {
+  transform: rotate(150deg);
+  display: inline-block;
+  content: '\1F3F7';
+  font-size: 0.7em;
+  position: absolute;
+  right: calc( 100% - 0.35em );
+  top: 25%;
+  text-shadow: -0.125rem -0.125rem 0.125rem var(--color-theme1), 0.125rem 0 0.125rem var(--color-theme1);
+  z-index: 2;
+}
+
+/* SECTION: .linklist-plugin-icon */
+
+.linklist-plugin-icon {
+  z-index: 10;
 }
 
 /* SECTION: #footer */
 
-#content + .pure-g {
+/* #content + .pure-g {
 	display: none;
+} */
+
+#footer,
+#footer a {
+  font-size: 0.7rem;
+  color: var(--color-theme4);
+}
+
+#footer::after {
+  display: block;
+  content: "CSS customization by MickGe";
+}
+
+/* SECTION: #editlinkform */
+
+#editlink-plugins .md_help a {
+  background-color: transparent;
+}
+
+/* SECTION: +Shaare */
+
+/* SECTION: #addlink-form */
+
+/* SECTION: .progressbar */
+
+.progressbar > div {
+  background: repeating-linear-gradient(-45deg, var(--color-theme5), var(--color-theme4) 6px, var(--color-theme7) 0,var(--color-theme8) 12px);
+}
+
+/* SECTION: #cloudtag */
+
+.cloudtag-container, .cloudtag-container a[href^="?searchtags"] {
+  color: var(--color-theme9);
+  opacity: 0.8;
+  transition: all var(--delay-transition2);
+}
+
+.cloudtag-container, .cloudtag-container a[href^="?searchtags"]:hover {
+  opacity: 1;
+}
+
+.cloudtag-container .count {
+  color: var(--color-theme7);
+}
+
+.pure-alert.pure-alert-success.tag-sort a,
+.pure-alert.pure-alert-success.tag-sort a:visited {
+  color:  var(--color-theme5)
+}
+
+/* SECTION: #daily */
+
+.page-form a {
+  color: var(--color-theme8);
 }
