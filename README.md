@@ -2,5 +2,5 @@
 
 Just a rounded theme and pretty dark  
 
-![preview](https://github.com/MickGe/shaarli-theme-round/settings/og-template)
+![preview](https://repository-images.githubusercontent.com/311492589/0db4b180-2635-11eb-92c8-53ceefa225b6)
 
