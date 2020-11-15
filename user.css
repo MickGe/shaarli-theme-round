@@ -16,6 +16,7 @@ html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-ad
 	--color-theme8: #294a68;
 	--color-theme9: #a03131;
 	--color-theme10: #009e00;
+	--color-theme11: #e9ded9;
 	--length-border2: 0.2rem;
 	--length-border5: 0.5rem;
 	--length-border10: 1rem;
@@ -412,6 +413,11 @@ img.head-logo {
 
 /* SECTION: .linklist-item.linklist-item-infos.linklist-item-tags.label-tag  */
 
+.linklist-item-tags {
+	position: relative;
+	z-index: 2;
+}
+
 .linklist-item .linklist-item-infos .linklist-item-tags .label-tag {
 	color: var(--color-theme9);
 	background: padding-box
@@ -419,8 +425,8 @@ img.head-logo {
 	text-shadow: 0.05rem 0.05rem 0.06rem var(--color-theme00),
 		-0.03rem -0.03rem 0.04rem var(--color-theme0);
 	border: 0.06rem solid var(--color-theme3);
-	box-shadow: 0.06rem 0.06rem 0.06rem var(--color-theme1),
-		0.06rem 0.06rem 0.12rem var(--color-theme1) inset,
+	box-shadow: 0.06rem 0.06rem 0.06rem var(--color-theme0),
+		0.06rem 0.06rem 0.12rem var(--color-theme0) inset,
 		-0.06rem -0.06rem 0.12rem var(--color-theme00) inset,
 		-0.06rem -0.06rem 0.12rem var(--color-theme00);
 	position: relative;
@@ -454,10 +460,54 @@ img.head-logo {
 	z-index: 2;
 }
 
+.linklist-item-infos-dateblock {
+	justify-content: flex-start;
+	display: flex;
+	align-items: center;
+}
+
+.linklist-item-infos-dateblock > a {
+	font-size: 0.7rem;
+	color: var(--color-theme8);
+}
+
+.linkdate {
+	font-size: 0.74rem;
+	font-style: italic;
+	color: var(--color-theme3);
+}
+
+/* SECTION: #permalinkQrcode */
+
+#permalinkQrcode {
+	bottom: -10px;
+	top: unset;
+	border-radius: var(--length-border10);
+	box-shadow: 2px 2px 20px 2px var(--color-theme0);
+}
+
+#permalinkQrcode::before {
+	content: "";
+}
+
 /* SECTION: .linklist-plugin-icon */
 
 .linklist-plugin-icon {
 	z-index: 10;
+}
+
+/* SECTION: .markdown */
+
+@media only screen and (max-width: 480px) {
+    .markdown {font-size: 80%;}
+}
+
+@media only screen and (min-width: 480px) {
+    .markdown {font-size: 85%;}
+}
+
+@media only screen and (min-width: 768px) {
+    .markdown {font-size: 92%;}
 }
 
 /* SECTION: #footer */
@@ -545,6 +595,25 @@ img.head-logo {
 
 /* SECTION: #daily */
 
+#daily {
+	background-color: var(--color-theme11);
+}
+
 .page-form a {
 	color: var(--color-theme8);
+}
+
+.daily-entry {
+	box-shadow: 0.07rem 0.07rem 0.7rem -0.32rem var(--color-theme0);
+	background-color: var(--color-theme00);
+	border-radius: var(--length-border5);
+	margin: 0.5rem;
+}
+
+.daily-entry-thumbnail > img {
+	border-radius: var(--length-border5);
+}
+
+.markdown blockquote {
+	padding-left: 1rem;
 }
