@@ -1,12 +1,14 @@
-# Shaarli-theme-round  
-
+- [Shaarli-theme-round](#shaarli-theme-round)
   - [Description](#description)
   - [Previews](#previews)
     - [Small screen:](#small-screen)
     - [Medium screen:](#medium-screen)
     - [Large screen:](#large-screen)
     - [Extra large screen:](#extra-large-screen)
+    - [Animation](#animation)
   - [my shaarli](#my-shaarli)
+
+# Shaarli-theme-round  
 
 ## Description
 
@@ -29,6 +31,10 @@ Just a rounded theme and pretty dark
 ### Extra large screen:
 
 ![xlarge](./screenshots/xlarge.png)
+
+### Animation
+
+![gif](./screenshots/animation-xlarge.gif)
 
 ## my shaarli
 
