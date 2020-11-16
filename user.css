@@ -1,3 +1,4 @@
+/* Use https://marketplace.visualstudio.com/items?itemName=TzachOvadia.todo-list to display "Action Comment" in the sidebar */
 /* SECTION: Normalize */ /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; } body { margin: 0; } article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; } audio, canvas, progress, video { display: inline-block; vertical-align: baseline; } audio:not([controls]) { display: none; height: 0; } [hidden], template { display: none; } a { background-color: transparent; } a:active, a:hover { outline: 0; } abbr[title] { border-bottom: 1pxdotted; } b, strong { font-weight: bold; } dfn { font-style: italic; } h1 { font-size: 2em; margin: 0.67em0; } mark { background: #ff0; color: #000; } small { font-size: 80%; } sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; } sup { top: -0.5em; } sub { bottom: -0.25em; } img { border: 0; } svg:not(:root) { overflow: hidden; } figure { margin: 1em40px; } hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; } pre { overflow: auto; } code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; } button, input, optgroup, select, textarea { color: inherit; font: inherit; margin: 0; } button { overflow: visible; } button, select { text-transform: none; } button, htmlinput[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; } button[disabled], htmlinput[disabled] { cursor: default; } button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; } input { line-height: normal; } input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; } input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { height: auto; } input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; } input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; } fieldset { border: 1pxsolid#c0c0c0; margin: 02px; padding: 0.35em0.625em0.75em; } legend { border: 0; padding: 0; } textarea { overflow: auto; } optgroup { font-weight: bold; } table { border-collapse: collapse; border-spacing: 0; } td, th { padding: 0; }
 
@@ -74,6 +75,7 @@ a > .fa:hover {
 .searchform-block button,
 .subheader-form,
 .subheader-form[type="submit"],
+.toolbar-plugin input[type="submit"],
 .tools-item .pure-button:hover {
 	background-color: var(--color-theme8);
 	color: var(--color-theme5);
@@ -88,11 +90,12 @@ a > .fa:hover {
 	color: var(--color-theme5);
 }
 
-.subheader-form[type="submit"]:hover,
-.page-form input[type="submit"]:hover,
 .page-form a.button:hover,
+.page-form input[type="submit"]:hover,
 .page-form .window-title,
-.taglist-container .validate-rename-tag {
+.subheader-form[type="submit"]:hover,
+.taglist-container .validate-rename-tag,
+.toolbar-plugin input[type="submit"]:hover {
 	background-color: var(--color-theme5);
 	color: var(--color-theme6);
 	box-shadow: 0rem 0rem 0.5rem var(--color-theme8) inset;
@@ -310,7 +313,12 @@ img.head-logo {
 		0.1rem 0.1rem 0.1rem var(--color-theme5);
 }
 
+
 /* SECTION: #linklist */
+
+#linklist {
+	margin-bottom: 2rem;
+}
 
 /* SECTION: #link-count-block */
 
@@ -334,30 +342,43 @@ img.head-logo {
 
 /* SECTION: #linklist-loop-content */
 
-#linklist-loop-content {
+/* #linklist-loop-content {
 	display: flex;
 	flex-flow: column wrap;
+} */
+
+#linklist-loop-content > .anchor {
+	display: none;
 }
 
-/* SECTION: .linklist-item  */
-
 .linklist-item {
-	align-items: flex-start;
-	flex: 0 0;
-	margin: 5px;
+	margin: 15px 5px auto 5px;
 	width: calc(100% - 10px);
 }
 
-/* @media screen and (max-width: 1260px) {
-  #linklist-loop-content {
-    display: flex;
-    flex-flow: column wrap;
-  }
-  .linklist-item {
-    flex: 0 1 100%;
-    width: calc( 100% - 10px );
-  }
-} */
+@media screen and (min-width: 1260px) {
+	#linklist-loop-content {
+		display: inline-grid;
+		grid-template-columns: 50% 50%;
+		justify-content: center;
+		grid-gap: 10px;
+	}
+	.linklist-item {
+		margin: auto;
+	}
+}
+
+@media screen and (min-width: 1480px) {
+	#linklist-loop-content {
+		grid-template-columns: 33% 33% 33%;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	#linklist-loop-content {
+		grid-template-columns: 25% 25% 25% 25%;
+	}
+}
 
 /* SECTION: .linklist-item.linklist-item-title  */
 
@@ -374,7 +395,13 @@ img.head-logo {
 .linklist-item-title .linklist-item-editbuttons {
 	z-index: 50;
 	position: absolute;
-	right: 0;
+	right: 10px;
+	opacity: 1;
+	transition: opacity var(--delay-transition2);
+}
+
+.linklist-item-title .linklist-item-editbuttons:hover {
+	opacity: 0.2;
 }
 
 .linklist-item-title .label-private {
@@ -666,6 +693,30 @@ img.head-logo {
 	background-color: var(--color-theme00);
 	border-radius: var(--length-border5);
 	margin: 0.5rem;
+	position: relative;
+}
+
+.daily-entry .daily-entry-title > a,
+.daily-entry .daily-entry-tags > span {
+	position: relative;
+	background-color: var(--color-theme00);
+}
+
+.daily-entry .daily-entry-description {
+	padding-bottom: 10px;
+}
+
+.daily-entry::before {
+	content: "";
+	position: absolute;
+	display: inline-block;
+	width: calc( 100% - 20px );
+	height: calc( 100% - 20px );
+	left: 10px;
+	top: 10px;
+	border-radius: inherit;
+	border: 4px double var(--color-theme11);
+	box-sizing: border-box;
 }
 
 .daily-entry-thumbnail > img {
