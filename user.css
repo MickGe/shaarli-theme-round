@@ -53,13 +53,15 @@ a:visited {
 	color: inherit;
 }
 
-a > .fa {
+a > .fa,
+.linklist-plugin-icon {
 	opacity: 0.8;
 	transition: all var(--delay-transition2);
 	transform: scale(1);
 }
 
-a > .fa:hover {
+a > .fa:hover,
+.linklist-plugin-icon:hover {
 	opacity: 1;
 	transform: scale(var(--scale-rate2));
 }
@@ -265,11 +267,12 @@ img.head-logo {
 
 #search-linklist .search-button:hover {
 	transform: scale(var(--scale-rate1));
+	box-shadow: 0rem 0rem 0.5rem var(--color-theme6) inset;
 }
 
 .searchform-block button:hover {
 	color: var(--color-theme2);
-	background-color: var(--color-theme6);
+	background-color: var(--color-theme5);
 }
 
 /* SECTION: .linklist-filters */
@@ -443,6 +446,7 @@ img.head-logo {
 
 .linklist-item-tags {
 	position: relative;
+	margin: 3px auto 6px auto;
 	z-index: 2;
 }
 
@@ -499,6 +503,7 @@ img.head-logo {
 .linklist-item-infos-dateblock > a {
 	font-size: 0.7rem;
 	color: var(--color-theme8);
+	padding-left: 3px;
 }
 
 .linkdate {
@@ -506,6 +511,11 @@ img.head-logo {
 	font-style: italic;
 	color: var(--color-theme3);
 }
+
+.linklist-item-infos-controls-group {
+	padding-right:3px;
+}
+
 
 /* SECTION: #permalinkQrcode */
 
