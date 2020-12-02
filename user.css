@@ -182,6 +182,10 @@ img.head-logo {
 		brightness(97%) contrast(101%);
 }
 
+#shaarli-title-desktop i::before {
+	color: var(--color-theme10);
+}
+
 #shaarli-menu {
 	/* background-image: url(https://grassmonkeyorganics.com/wp-content/uploads/2018/10/917.jpg); */
 	background-color: var(--color-theme1);
@@ -283,6 +287,10 @@ img.head-logo {
 	align-items: center;
 }
 
+.linklist-filters a {
+	margin: 2px;
+}
+
 .linklist-pages a {
 	color: var(--color-theme5);
 	transition: all var(--delay-transition5);
@@ -295,7 +303,6 @@ img.head-logo {
 .linklist-filters > *,
 .linksperpage > * {
 	transition: all var(--delay-transition2);
-	margin: 2px;
 }
 
 .linklist-filters > a:hover {

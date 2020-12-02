@@ -38,4 +38,5 @@ Just a rounded theme and pretty dark
 
 ## my shaarli
 
-[MgShaarli](https://mickge.nohost.me/shaarli/).
+[MgShaarli](https://mickge.fr.eu.org/shaarli/). v0.11.1  
+[MgShaarli](https://mickge.nohost.me/shaarli/). v0.10.4
