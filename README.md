@@ -38,5 +38,5 @@ Just a rounded theme and pretty dark
 
 ## Tests with
 
-- v0.11.1 [MgShaarli](https://shaarli.mickge.fr.eu.org/shaarli/)
+- v0.11.1 [MgShaarli](https://shaarli.mickge.fr.eu.org/)
 - v0.10.4
