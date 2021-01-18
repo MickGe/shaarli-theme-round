@@ -1,34 +1,34 @@
+# Shaarli-theme-round
+
 - [Shaarli-theme-round](#shaarli-theme-round)
   - [Description](#description)
   - [Previews](#previews)
-    - [Small screen:](#small-screen)
-    - [Medium screen:](#medium-screen)
-    - [Large screen:](#large-screen)
-    - [Extra large screen:](#extra-large-screen)
+    - [Small screen](#small-screen)
+    - [Medium screen](#medium-screen)
+    - [Large screen](#large-screen)
+    - [Extra large screen](#extra-large-screen)
     - [Animation](#animation)
-  - [my shaarli](#my-shaarli)
-
-# Shaarli-theme-round  
+  - [Tests with](#tests-with)
 
 ## Description
 
-Just a rounded theme and pretty dark  
+Just a rounded theme and pretty dark
 
 ## Previews
 
-### Small screen:
+### Small screen
 
 ![small](./screenshots/small.png)
 
-### Medium screen:
+### Medium screen
 
 ![medium](./screenshots/medium.png)
 
-### Large screen:
+### Large screen
 
 ![large](./screenshots/large.png)
 
-### Extra large screen:
+### Extra large screen
 
 ![xlarge](./screenshots/xlarge.png)
 
@@ -36,7 +36,7 @@ Just a rounded theme and pretty dark
 
 ![gif](./screenshots/animation-xlarge.gif)
 
-## my shaarli
+## Tests with
 
-[MgShaarli](https://mickge.fr.eu.org/shaarli/). v0.11.1  
-[MgShaarli](https://mickge.nohost.me/shaarli/). v0.10.4
+- v0.11.1 [MgShaarli](https://shaarli.mickge.fr.eu.org/shaarli/)
+- v0.10.4
